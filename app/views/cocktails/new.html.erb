@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>New cocktail</h1>
+  <%= simple_form_for(@cocktail) do |f| %>
+    <%= f.input :name %>
+    <%= f.file_field :photo, accept: 'image/png,image/jpeg' %>
+    <%#= f.input :photo_cache, as: :hidden %>
+    <%= f.submit "Add a cocktail", class: "btn btn-primary mt-2" %>
+  <% end %>
+</div>

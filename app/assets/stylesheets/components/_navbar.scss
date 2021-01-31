@@ -10,3 +10,12 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.btn-outline-success {
+  color: #2E2F30;
+  border-color: #2E2F30;
+  &:hover{
+    background-color: lightgray;
+    border-color: darkgrey;
+  }
+}

@@ -1,3 +1,22 @@
 // Place all the styles related to the cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.mt-2{
+  color: black;
+  background-color: lightpink;
+  border: lightgray;
+  &:hover{
+    background-color: lightpink;
+  }
+}
+
+.auto_type{
+  text-align: center;
+  position: absolute;
+  top: 328px;
+  right: 229px;
+  color: white;
+  font-size: xxx-large;
+  font-family: "Century Schoolbook L";
+}
