@@ -1,11 +1,18 @@
 <div class="container">
   <h1>New cocktail</h1>
-  <%= simple_form_for(@cocktail) do |f| %>
+  <%= simple_form_for(@cocktail)  do |f| %>
     <%= f.input :name %>
-    <%= f.file_field :photo, accept: 'image/png,image/jpeg' %>
+    <%#= f.label :picture_url %>
+    <%#= f.text_field :photo, class: 'form-control' %>
     <%#= f.input :photo_cache, as: :hidden %>
     <%= f.submit "Add a cocktail", class: "btn btn-primary mt-2" %>
   <% end %>
+
+  <div class="loading">
+    <span><i class="fas fa-wine-bottle"></i></span>
+    <span><i class="fas fa-wine-bottle"></i></span>
+    <span><i class="fas fa-wine-bottle"></i></span>
+    <div class="line"></div>
+  </div>
   <%#= link_to "Add a the doses", new_cocktail_dose_path(@cocktail), type: "button", class: "btn btn-primary mt-2" %>
 </div>
-

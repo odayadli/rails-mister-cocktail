@@ -22,6 +22,11 @@ import 'bootstrap';
 
 import { loadDynamicBannerText } from '../components/banner';
 
+// document.querySelector(".wine").addEventListener("submit", function() {
+//   document.getElementById("loading")
+// });
+
+
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]

@@ -3,11 +3,9 @@ class CocktailsController < ApplicationController
   def home; end
 
   def index
-    @cocktails = Cocktail.search(params[:search])
-
     if params[:query].present?
       @query = params[:query]
-      @cocktails = Cocktail.where("name LIKE ?","%#{params[:query]}%")
+      @cocktails = Cocktail.where('name LIKE ?',"%#{params[:query]}%")
       # Preventing SQL Injection and Database error for
       # unknown characters
     else
@@ -15,7 +13,10 @@ class CocktailsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @cocktails = Cocktail.search(params[:search])
+    redirect_to cocktail_path(@cocktail) if @cocktails
+  end
 
   def new
     @cocktail = Cocktail.new
