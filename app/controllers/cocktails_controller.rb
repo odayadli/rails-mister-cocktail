@@ -3,7 +3,16 @@ class CocktailsController < ApplicationController
   def home; end
 
   def index
-    @cocktails = Cocktail.all
+    @cocktails = Cocktail.search(params[:search])
+
+    if params[:query].present?
+      @query = params[:query]
+      @cocktails = Cocktail.where("name LIKE ?","%#{params[:query]}%")
+      # Preventing SQL Injection and Database error for
+      # unknown characters
+    else
+      @cocktails = Cocktail.all
+    end
   end
 
   def show; end
@@ -34,7 +43,7 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :photo)
+    params.require(:cocktail).permit(:name, :photo, :search)
   end
 
   private

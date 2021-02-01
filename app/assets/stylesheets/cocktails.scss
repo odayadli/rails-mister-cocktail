@@ -26,5 +26,15 @@
   justify-content: space-around;
   margin-left: 40px;
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 90px;
+}
+.card-img-top{
+  width: 286px;
+  height: 356px;
+}
+
+.card:hover{
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari 3-8 */
+    transform: scale(1.15);
 }

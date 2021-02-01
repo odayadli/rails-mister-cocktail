@@ -1,4 +1,15 @@
 <body class="cocktail_page">
+
+<div class="row">
+  <div class="col">
+    <% if @query %>
+      <p>You searched for <strong><%= @query %></strong>. We found <%= @cocktails.count %> flats out of our <%= Cocktail.count %> on our website.</p>
+    <% else %>
+      <p>All <%= Cocktail.count %> Cocktails.</p>
+    <% end %>
+  </div>
+</div>
+
 <h1>List of cocktails</h1>
 <div>
   <%= link_to "Add a new cocktail", new_cocktail_path, type: "button", class: "btn btn-primary mt-2"%>
