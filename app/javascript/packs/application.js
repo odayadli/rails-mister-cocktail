@@ -21,18 +21,20 @@ import 'bootstrap';
 // const imagePath = (name) => images(name, true)
 
 import { loadDynamicBannerText } from '../components/banner';
+import {glideSlide} from "../components/loading_wine";
 
 // document.querySelector(".wine").addEventListener("submit", function() {
 //   document.getElementById("loading")
 // });
 
-
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
   loadDynamicBannerText();
+  // glideSlide()
 });
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()
 })
+
