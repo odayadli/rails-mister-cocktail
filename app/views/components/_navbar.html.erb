@@ -13,14 +13,15 @@
         <a class="nav-link" href="/cocktails">ALCOHOL</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/">NON-ALCOHOL <span class="sr-only">(current)</span></a>
+<!--        <a class="nav-link" href="../ingredients">NON-ALCOHOL <span class="sr-only">(current)</span></a>-->
+        <%= link_to "NON-ALCOHOL", new_ingredient_path %>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           DISCOVER MORE
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "Add a new cocktail", new_cocktail_path%>
+          <%= link_to "CREATE YOUR OWN COCKTAIL", new_cocktail_path%>
           <a class="dropdown-item" href="#">ABOUT</a>
           <a class="dropdown-item" href="#">CONTACT Us</a>
           <div class="dropdown-divider"></div>

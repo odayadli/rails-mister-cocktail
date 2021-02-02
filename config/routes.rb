@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :doses, only: %i[index new create]
   end
   resources :doses, only: %i[show edit update destroy]
-
+  resources :ingredients
 end
