@@ -18,3 +18,4 @@ drinks.each_value do |ingredients|
     Ingredient.create!(name: name)
   end
 end
+

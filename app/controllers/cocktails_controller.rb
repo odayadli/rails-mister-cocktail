@@ -1,6 +1,10 @@
 class CocktailsController < ApplicationController
-  before_action :find_cocktail, only: %i[show edit update destroy]
+  before_action :find_cocktail, only: %i[show edit update destroy healthy_coktail]
   def home; end
+
+  def healthy_cocktails
+    @cocktails = Cocktail.where(category: 'Non-Alcohol')
+  end
 
   def index
     if params[:query].present?
@@ -44,7 +48,7 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :photo, :description, :search)
+    params.require(:cocktail).permit(:name, :type, :description, :search)
   end
 
   private
