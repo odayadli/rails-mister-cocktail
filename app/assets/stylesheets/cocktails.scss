@@ -18,7 +18,8 @@
   right: 229px;
   color: white;
   font-size: xxx-large;
-  font-family: "Century Schoolbook L";
+  font-style: italic;
+  font-family: 'Londrina Solid', cursive;
 }
 
 .wrapper_card{
@@ -96,7 +97,93 @@
   gap: 20px;
 }
 
-.card-text {
-  font-size: 85%;
+.card-text_index a {
+  font-size: x-large;
+  color: #0E0000;
   width: 160px;
+  text-align: center;
+
 }
+
+.card:hover{
+  -ms-transform: scale(1); /* IE 9 */
+  -webkit-transform: scale(1); /* Safari 3-8 */
+  transform: scale(1.05);
+}
+
+.card{
+  float: left;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0;
+}
+
+.card > img {
+  margin-bottom: .75rem;
+  gap: 20px;
+}
+
+.text-muted{
+  margin-top: 45px;
+}
+
+.card-foot{
+  text-align: center;
+}
+.foot{
+  color: black;
+  margin-left: 46px;
+  margin-right: 46px;
+  text-align: center;
+  display: inline-block;
+}
+
+.foot a:hover{
+  border: 3px dashed lightgray;
+  text-decoration: none;
+}
+
+.foot a{
+  color: black;
+}
+
+.edit:hover{
+  border: lightgray;
+  font-style: italic;
+
+  color: #0E0000;
+}
+
+.delete:hover{
+  border: lightgray;
+  font-style: italic;
+  color: #0E0000;
+  background-color: lightpink;
+}
+
+.row-index{
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  gap: 55px;
+  grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+}
+
+.card-index{
+  float: left;
+  width: 107.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 2px;
+}
+

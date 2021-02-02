@@ -11,22 +11,28 @@
   </div>
 </div>
 
-<h1>List of cocktails</h1>
-<div>
+<h1 style="font-family: 'Londrina Solid', cursive; ">List of cocktails</h1>
+<div style="font-family: 'Pacifico', cursive;">
   <%= link_to "Add a new cocktail", new_cocktail_path, type: "button", class: "btn btn-primary mt-2" %>
 </div>
 
 
 <div class="album text-muted">
   <div class="container">
-    <div class="row">
+    <div class="row-index">
       <% @cocktails.each do |cocktail| %>
-        <div class="card">
+        <div class="card-index">
           <img src="/assets/drink_3.jpg" class="card-image-index" alt="...">
           <%#= image_tag("picture_holder")%>
-          <strong class="card-text"><%= cocktail.name %></strong>
-          <!--          <a href="<%#= product_path(product) %>"><%#= image_tag("picture_holder")%><a>-->
-          <p><%= cocktail.description %></p>
+          <div>
+            <strong class="card-text_index" style="font-family: 'Londrina Solid', cursive; color: #0E0000 "><%= link_to cocktail.name, cocktail_path(cocktail) %></strong>
+            <!--          <a href="<%#= product_path(product) %>"><%#= image_tag("picture_holder")%><a>-->
+            <p><%= cocktail.description %></p>
+            <div class="card-foot">
+              <div class="foot edit"><i class="fas fa-edit"><%= link_to "Edit me", edit_cocktail_path(cocktail) %></i></div>
+              <div class="foot delete"><i class="fas fa-trash-alt"><%= link_to "Delete me", cocktail_path(cocktail), method: :delete, data: { confirm: "You sure?" } %></i></div>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
@@ -38,7 +44,7 @@
 </div>
 
 
-<!--<p> <%#= link_to cocktail.name, cocktail_path(cocktail) %></p>-->
+<!--<p> </p>-->
 <!--<p> <%#= link_to "Delete", cocktail_path(cocktail), method: :delete, data: { confirm: "You sure?" } %></p>-->
-
+<!--style="color: #0E0000; font-family: 'Pacifico', cursive;"-->
 </body>
