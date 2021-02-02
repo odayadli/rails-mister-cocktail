@@ -133,8 +133,8 @@
 }
 .foot{
   color: black;
-  margin-left: 46px;
-  margin-right: 46px;
+  margin-left: 38px;
+  margin-right: 38px;
   text-align: center;
   display: inline-block;
 }
@@ -187,3 +187,8 @@
   border-radius: 2px;
 }
 
+.card-index:hover{
+  -ms-transform: scale(1); /* IE 9 */
+  -webkit-transform: scale(1); /* Safari 3-8 */
+  transform: scale(1.05);
+}
