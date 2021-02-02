@@ -3,7 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/glidejs" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/rails-bootstrap" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/spec" vcs="Git" />
   </component>
 </project>
