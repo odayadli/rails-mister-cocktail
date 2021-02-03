@@ -3,6 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/glidejs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mocktail-party-93" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mocktail-party-93/cloudinary_gem" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/spec" vcs="Git" />
   </component>
 </project>
