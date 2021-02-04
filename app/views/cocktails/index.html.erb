@@ -18,8 +18,7 @@
             <!--          <a href="<%#= product_path(product) %>"><%#= image_tag("picture_holder")%><a>-->
             <p><%= cocktail.description %></p>
             <div class="card-foot">
-              <div class="foot edit"><i class="fas fa-edit"><%= link_to "Edit me", edit_cocktail_path(cocktail) %></i>
-              </div>
+              <div class="foot edit"><i class="fas fa-edit"><%= link_to "Edit me", edit_cocktail_path(cocktail) %></i></div>
               <div class="foot delete">
                 <i class="fas fa-trash-alt"><%= link_to "Delete me", cocktail_path(cocktail), method: :delete, data: { confirm: "You sure?" } %></i>
               </div>

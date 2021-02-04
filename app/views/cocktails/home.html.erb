@@ -28,35 +28,15 @@
   </a>
 </div>
 
+
+
+
 <div class="wrapper_card">
   <div class="card" style="width: 18rem;">
-    <img src="/assets/drink_1.jpg" class="card-img-top" alt="..." style="width: 264px">
+    <%#= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-body">
-      <h5 class="card-title">Red Devil</h5>
-      <p class="card-text">Enjoy the most delicious chilly cocktail this winter.</p>
-    </div>
-    <div class="card-body">
-      <a href="#" class="card-link">Edit</a>
-      <a href="#" class="card-link">Check the recipe</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <img src="/assets/drink_2.jpg" class="card-img-top" alt="..." style="width: 264px">
-    <div class="card-body">
-      <h5 class="card-title">Red Devil</h5>
-      <p class="card-text">Enjoy the most delicious chilly cocktail this winter.</p>
-    </div>
-    <div class="card-body">
-      <a href="#" class="card-link">Edit</a>
-      <a href="#" class="card-link">Check the recipe</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img src="/assets/drink_3.jpg" class="card-img-top" alt="..." style="width: 264px">
-    <div class="card-body">
-      <h5 class="card-title">Red Devil</h5>
-      <p class="card-text">Enjoy the most delicious chilly cocktail this winter.</p>
+      <h5 class="card-title"><%= @cocktails %></h5>
+      <p class="card-text"><%= @cocktails%>.</p>
     </div>
     <div class="card-body">
       <a href="#" class="card-link">Edit</a>

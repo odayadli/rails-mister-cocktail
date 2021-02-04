@@ -1,7 +1,9 @@
 class CocktailsController < ApplicationController
   before_action :find_cocktail, only: %i[show edit update destroy healthy_coktail]
 
-  def home; end
+  def home
+    @cocktails = Cocktail.last(3)
+  end
 
   def healthy_cocktails
     @cocktails = Cocktail.where(category: 'Non-Alcohol')

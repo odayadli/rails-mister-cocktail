@@ -1,15 +1,15 @@
 <div class='sample' id='sample'>
 
-  <div style="height: auto; width: 100%; padding: 1%">
-    <div>
-      <div style="float: left; margin-left: 2%;">
+  <div class="show-container">
+    <h1 style="text-align: center; font-family: 'Londrina Solid', cursive; font-size: 100px"><%= @cocktail.name.upcase %></h1>
+    <div style="display: grid; grid-template-columns: 1fr 1fr;">
+      <div class="image-container">
         <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
       </div>
-      <div>
-        <div style="margin-left: 90px">
-          <h1><%= @cocktail.name %></h1>
+      <div class="text-container">
+        <div>
           <span>Category: <%= @cocktail.category %></span>
-          <span>Created by: <%= @cocktail.creator %></span>
+          <span>Created by: <%= @cocktail.creator %></span><br>
           <p><%= @cocktail.description %></p>
         </div>
         <div>
@@ -20,7 +20,6 @@
                 <th>Ingredient</th>
                 <th>Doses</th>
                 <th>Delete</th>
-
               </tr>
               </thead>
               <tbody>
@@ -29,7 +28,9 @@
                   <td><%= dose.ingredient.name %></td>
                   <td><%= dose.description %></td>
                   <td>
-                    <i class="fas fa-trash-alt"><%= link_to "Delete me", dose_path(dose), method: :delete, data: { confirm: "You sure?" } %></i>
+                    <div class="foot delete">
+                      <i class="fas fa-trash-alt"><%= link_to "Delete me", dose_path(dose), method: :delete, data: { confirm: "You sure?" } %></i>
+                    </div>
                   </td>
                   </tr>
                 <% end %>
@@ -43,13 +44,13 @@
 
   <div>
     <div>
-      <%= link_to "More Doses", new_cocktail_dose_path(@cocktail) %>
-      <%= link_to "Edit Recipe", edit_cocktail_path(@cocktail) %>
-      <%= link_to "Back", cocktails_path %>
+      <div class="foot edit"><i class="fas fa-magic"><%= link_to "more doses", new_cocktail_dose_path(@cocktail) %></i></div>
+      <div class="foot edit"><i class="fas fa-edit"><%= link_to "edit me", edit_cocktail_path(@cocktail) %></i></div>
+      <div class="foot edit"><i class="fas fa-cocktail"><%= link_to "more cocktails", cocktails_path %></i></div>
     </div>
     <div>
       <form id="form1" runat='server'>
-        <input type="button" value="Save this recipe" onclick="javascript:printDiv('sample')"/>
+        <i class="fas fa-file-pdf"><input style="display: inline-block;" type="button" value="Save this recipe" onclick="javascript:printDiv('sample')"/></i>
       </form>
     </div>
   </div>

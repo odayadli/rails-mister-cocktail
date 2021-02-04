@@ -2,7 +2,7 @@ class Cocktail < ApplicationRecord
   has_many :doses, dependent: :destroy
   has_many :ingredients, through: :doses
   has_one_attached :photo
-  validates :name, :photo, uniqueness: true
+  validates :name, uniqueness: true
   validates :name, :photo, :category, presence: true
   
   def self.search(search)
@@ -11,8 +11,10 @@ class Cocktail < ApplicationRecord
       if cocktail
         where(cocktail_id: cocktail)
       else
-        Cocktail.all
+        @cocktails = Cocktail.all
       end
+    else
+      @cocktails = Cocktail.all
     end
   end
 end

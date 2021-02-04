@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Recreate your cocktail</h1>
+  <%= simple_form_for(@cocktail)  do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category, :collection => %w[Alcohol Non-Alcohol] %>
+    <%= f.input :description %><br>
+    <%= f.input :creator, placeholder: "Please add your name" %><br>
+    <%= f.input :photo, as: :file %><br>
+    <%= f.submit "Add a cocktail", class: "btn btn-primary mt-2" %>
+  <% end %>
+
+
+
+
+  <div class="loading">
+    <span><i class="fas fa-wine-bottle"></i></span>
+    <span><i class="fas fa-wine-bottle"></i></span>
+    <span><i class="fas fa-wine-bottle"></i></span>
+    <div class="line"></div>
+  </div>
+  <%#= link_to "Add a the doses", new_cocktail_dose_path(@cocktail), type: "button", class: "btn btn-primary mt-2" %>
+</div>
