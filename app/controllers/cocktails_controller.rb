@@ -13,10 +13,7 @@ class CocktailsController < ApplicationController
     @cocktails = Cocktail.all
   end
 
-  def show
-    @cocktails = Cocktail.search(params[:search])
-    redirect_to cocktail_path(@cocktail) if @cocktails
-  end
+  def show; end
 
   def new
     @cocktail = Cocktail.new

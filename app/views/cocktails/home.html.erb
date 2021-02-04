@@ -31,16 +31,28 @@
 
 
 
-<div class="wrapper_card">
-  <div class="card" style="width: 18rem;">
-    <%#= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-    <div class="card-body">
-      <h5 class="card-title"><%= @cocktails %></h5>
-      <p class="card-text"><%= @cocktails%>.</p>
+<div class="album text-muted">
+  <div class="container">
+    <div class="row-index">
+      <% @cocktails.each do |cocktail| %>
+        <div class="card-index">
+          <%= cl_image_tag cocktail.photo.key, height: 315, width: 354, crop: :fill%>
+          <div>
+            <strong class="card-text_index" style="font-family: 'Londrina Solid', cursive; color: #0E0000 "><%= link_to cocktail.name, cocktail_path(cocktail) %></strong>
+            <!--          <a href="<%#= product_path(product) %>"><%#= image_tag("picture_holder")%><a>-->
+            <p><%= cocktail.description %></p>
+            <div class="card-foot">
+              <div class="foot edit"><i class="fas fa-edit"><%= link_to "Edit me", edit_cocktail_path(cocktail) %></i></div>
+              <div class="foot delete">
+                <i class="fas fa-trash-alt"><%= link_to "Delete me", cocktail_path(cocktail), method: :delete, data: { confirm: "You sure?" } %></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-    <div class="card-body">
-      <a href="#" class="card-link">Edit</a>
-      <a href="#" class="card-link">Check the recipe</a>
+    <div class="row">
+      <div class="col-md-12">
+      </div>
     </div>
   </div>
-</div>

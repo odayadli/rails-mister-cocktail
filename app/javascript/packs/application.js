@@ -26,17 +26,25 @@ import {glideSlide} from "../components/loading_wine";
 // document.querySelector(".wine").addEventListener("submit", function() {
 //   document.getElementById("loading")
 // });
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
   loadDynamicBannerText();
+
   // glideSlide()
+
 });
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()
 })
+
+
+
 
 
 require("trix")
