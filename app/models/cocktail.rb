@@ -1,9 +1,9 @@
 class Cocktail < ApplicationRecord
   has_many :doses, dependent: :destroy
-  has_one_attached :photo
   has_many :ingredients, through: :doses
-  validates :name, uniqueness: true
-  validates :name, presence: true
+  has_one_attached :photo
+  validates :name, :photo, uniqueness: true
+  validates :name, :photo, :category, presence: true
   
   def self.search(search)
     if search

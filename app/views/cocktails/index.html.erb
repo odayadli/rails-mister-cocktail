@@ -1,19 +1,9 @@
-<body class="cocktail_page">
-
-<div class="row">
-  <div class="col">
-    <% if @query %>
-      <p>You searched for <strong><%= @query %></strong>. We found <%= @cocktails.count %> flats out of
-        our <%= Cocktail.count %> on our website.</p>
-    <% else %>
-      <p>All <%= Cocktail.count %> Cocktails.</p>
-    <% end %>
-  </div>
-</div>
-
+<div class="cocktail_page">
+<div class="navbar-cocktail">
 <h1 style="font-family: 'Londrina Solid', cursive; ">List of cocktails</h1>
 <div style="font-family: 'Pacifico', cursive;">
   <%= link_to "Add a new cocktail", new_cocktail_path, type: "button", class: "btn btn-primary mt-2" %>
+</div>
 </div>
 
 
@@ -22,15 +12,17 @@
     <div class="row-index">
       <% @cocktails.each do |cocktail| %>
         <div class="card-index">
-          <img src="/assets/drink_3.jpg" class="card-image-index" alt="...">
-          <%#= image_tag("picture_holder")%>
+          <%= cl_image_tag cocktail.photo.key, height: 315, width: 354, crop: :fill%>
           <div>
             <strong class="card-text_index" style="font-family: 'Londrina Solid', cursive; color: #0E0000 "><%= link_to cocktail.name, cocktail_path(cocktail) %></strong>
             <!--          <a href="<%#= product_path(product) %>"><%#= image_tag("picture_holder")%><a>-->
             <p><%= cocktail.description %></p>
             <div class="card-foot">
-              <div class="foot edit"><i class="fas fa-edit"><%= link_to "Edit me", edit_cocktail_path(cocktail) %></i></div>
-              <div class="foot delete"><i class="fas fa-trash-alt"><%= link_to "Delete me", cocktail_path(cocktail), method: :delete, data: { confirm: "You sure?" } %></i></div>
+              <div class="foot edit"><i class="fas fa-edit"><%= link_to "Edit me", edit_cocktail_path(cocktail) %></i>
+              </div>
+              <div class="foot delete">
+                <i class="fas fa-trash-alt"><%= link_to "Delete me", cocktail_path(cocktail), method: :delete, data: { confirm: "You sure?" } %></i>
+              </div>
             </div>
           </div>
         </div>
@@ -47,4 +39,4 @@
 <!--<p> </p>-->
 <!--<p> <%#= link_to "Delete", cocktail_path(cocktail), method: :delete, data: { confirm: "You sure?" } %></p>-->
 <!--style="color: #0E0000; font-family: 'Pacifico', cursive;"-->
-</body>
+</div>

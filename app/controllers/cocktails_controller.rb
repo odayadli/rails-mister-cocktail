@@ -1,5 +1,6 @@
 class CocktailsController < ApplicationController
   before_action :find_cocktail, only: %i[show edit update destroy healthy_coktail]
+
   def home; end
 
   def healthy_cocktails
@@ -7,14 +8,7 @@ class CocktailsController < ApplicationController
   end
 
   def index
-    if params[:query].present?
-      @query = params[:query]
-      @cocktails = Cocktail.where('name LIKE ?',"%#{params[:query]}%")
-      # Preventing SQL Injection and Database error for
-      # unknown characters
-    else
-      @cocktails = Cocktail.all
-    end
+    @cocktails = Cocktail.all
   end
 
   def show
@@ -48,7 +42,7 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :type, :description, :search)
+    params.require(:cocktail).permit(:name, :category, :description, :photo, :creator, :search)
   end
 
   private

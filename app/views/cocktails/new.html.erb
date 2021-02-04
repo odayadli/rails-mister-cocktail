@@ -4,8 +4,13 @@
     <%= f.input :name %>
     <%= f.input :category, :collection => %w[Alcohol Non-Alcohol] %>
     <%= f.input :description %><br>
+    <%= f.input :creator, placeholder: "Please add your name" %><br>
+    <%= f.input :photo, as: :file %><br>
     <%= f.submit "Add a cocktail", class: "btn btn-primary mt-2" %>
   <% end %>
+
+
+
 
   <div class="loading">
     <span><i class="fas fa-wine-bottle"></i></span>

@@ -1,34 +1,76 @@
-<div class="container">
-  <h1>Cocktails#show</h1>
-  <p><%= @cocktail.name %></p>
-  <ul>
-    <% @cocktail.doses.each do |dose| %>
-      <li><%= dose.ingredient.name %> — <%= dose.description %>
-        <%= link_to "Delete", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
-      </li>
-    <% end %>
-  </ul>
-  <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail) %> |
-  <%= link_to "Back", cocktails_path %>
+<div class='sample' id='sample'>
+
+  <div style="height: auto; width: 100%; padding: 1%">
+    <div>
+      <div style="float: left; margin-left: 2%;">
+        <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+      </div>
+      <div>
+        <div style="margin-left: 90px">
+          <h1><%= @cocktail.name %></h1>
+          <span>Category: <%= @cocktail.category %></span>
+          <span>Created by: <%= @cocktail.creator %></span>
+          <p><%= @cocktail.description %></p>
+        </div>
+        <div>
+          <div>
+            <table>
+              <thead>
+              <tr style="text-align: center; width: 30px">
+                <th>Ingredient</th>
+                <th>Doses</th>
+                <th>Delete</th>
+
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <% @cocktail.doses.each do |dose| %>
+                  <td><%= dose.ingredient.name %></td>
+                  <td><%= dose.description %></td>
+                  <td>
+                    <i class="fas fa-trash-alt"><%= link_to "Delete me", dose_path(dose), method: :delete, data: { confirm: "You sure?" } %></i>
+                  </td>
+                  </tr>
+                <% end %>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <%= link_to "More Doses", new_cocktail_dose_path(@cocktail) %>
+      <%= link_to "Edit Recipe", edit_cocktail_path(@cocktail) %>
+      <%= link_to "Back", cocktails_path %>
+    </div>
+    <div>
+      <form id="form1" runat='server'>
+        <input type="button" value="Save this recipe" onclick="javascript:printDiv('sample')"/>
+      </form>
+    </div>
+  </div>
 </div>
 
-<!--<div class="row">-->
-<!--  <div class="col-12">-->
-<!--    <div class="glide">-->
-<!--      <div class="glide__track" data-glide-el="track">-->
-<!--        <ul class="glide__slides">-->
-<!--          <li class="glide__slide">0</li>-->
-<!--          <li class="glide__slide">1</li>-->
-<!--          <li class="glide__slide">2</li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--      <div class="glide">-->
-<!--        <div class="glide__track" data-glide-el="track">...</div>-->
-<!--        <div class="glide__arrows" data-glide-el="controls">-->
-<!--          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>-->
-<!--          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+
+
+
+<!--Javascript function to save data inside 'sample' div -->
+
+<script language="javascript" type="text/javascript">
+  function printDiv(divID) {
+    var divElements = document.getElementById(divID).innerHTML;
+    var oldPage = document.body.innerHTML;
+
+    document.body.innerHTML =
+      "<html><head><title></title></head><body>" +
+      divElements + "</body>";
+
+    window.print();
+
+    document.body.innerHTML = oldPage;
+  }
+</script>

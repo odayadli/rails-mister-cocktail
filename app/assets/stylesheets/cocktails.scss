@@ -126,7 +126,6 @@
 
 .text-muted{
   margin-top: 45px;
-  background-image: url("index-background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -190,8 +189,20 @@
   border-radius: 2px;
 }
 
+
+
 .card-index:hover{
   -ms-transform: scale(1); /* IE 9 */
   -webkit-transform: scale(1); /* Safari 3-8 */
   transform: scale(1.05);
+}
+
+.card-image{
+  height: 315px;
+  width: 354px;
+  crop: auto;
+  }
+
+table, th, td {
+  border: 4px solid black;
 }

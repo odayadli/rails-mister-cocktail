@@ -1,23 +1,12 @@
-body, html {
-  height: 100%;
-  margin: 0;
-}
 
 .bgimg {
-  background-image: url('comingsoon3.jpg');
+
   height: 100%;
-  background-position: center;
-  background-size: cover;
-  position: relative;
+  display: flex;
   font-family: "Courier New", Courier, monospace;
   font-size: 25px;
 }
 
-.topleft {
-  position: absolute;
-  bottom: 486px;
-  right: 1100px;
-}
 
 
 .bottomleft {
@@ -28,7 +17,7 @@ body, html {
 
 .middle {
   position: absolute;
-  top: 19%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -39,10 +28,6 @@ hr {
   width: 40%;
 }
 
-.count-down{
-  margin-left: 100px;
-  background-color: transparent;
-  width: 40%;
-  margin-bottom: 1rem;
-  margin-top: 99px;
+iframe{
+  margin-top: 30px;
 }
