@@ -30,6 +30,7 @@ import { initStarRating } from '../plugins/init_star_rating';
 
 initStarRating();
 
+
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
@@ -43,8 +44,17 @@ document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="popover"]').popover()
 })
 
+import { initSelect2 } from '../components/init_select2';
 
+document.addEventListener("turbolinks:load", function() {
+  initSelect2();
+});
 
+// if( $(#check_box_id).is(':checked')) {
+//   $("#div_id").show();
+// } else {
+//   $("#div_id").hide();
+// }
 
 
 require("trix")

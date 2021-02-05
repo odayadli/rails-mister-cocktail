@@ -1,6 +1,12 @@
 // Place all the styles related to the cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.cocktail_page{
+  margin-bottom: 5.5rem;
+}
+.album{
+  margin-bottom: 5.5rem;
+}
 
 .mt-2{
   color: black;
@@ -13,13 +19,42 @@
 
 .auto_type{
   text-align: center;
-  position: absolute;
+  position: relative;
   top: 328px;
-  right: 229px;
+  right: 35px;
   color: white;
   font-size: xxx-large;
   font-style: italic;
   font-family: 'Londrina Solid', cursive;
+}
+
+@media screen and (min-width: 375px) and (max-width: 400px) {
+  .auto_type {
+    font-size: 0.8rem;
+    top: 150px;
+  }
+  .carousel-item{
+    height: 250px;
+  }
+}
+
+
+@media screen and (min-width: 410px) and (max-width: 420px)  {
+  .auto_type{
+    font-size: 1rem;
+    top: 200px;
+
+  }
+
+  .carousel-item{
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 1245px) and (max-width: 1345px)  {
+  .carousel-item{
+    height: 500px;
+  }
 }
 
 .wrapper_card{
@@ -165,22 +200,14 @@
 }
 
 .row-index{
-  flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
-  gap: 55px;
-  grid-template-columns: 1fr 1fr 1fr;
-  display: grid;
+
 }
 
 .card-index{
-  float: left;
-  width: 107.333%;
   padding: .75rem;
   margin-bottom: 2rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
@@ -229,7 +256,7 @@ th {
   display: inline-block;
   width: 100%;
   margin-top: 40px;
-  border: 3px solid black;
+
 }
 @media (max-width: 620px) {
   .text-container {

@@ -10,7 +10,7 @@ class CocktailsController < ApplicationController
   end
 
   def index
-    @cocktails = Cocktail.all
+    @cocktails = Cocktail.where(category: 'Alcohol')
   end
 
   def show; end
